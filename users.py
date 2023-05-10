@@ -1,22 +1,6 @@
-import sqlite3
+from servers import databaseConnection
 from validator import completaCPFouCNPJ
-from flask import Flask
 from datetime import datetime
-
-
-#Connecting with the database
-def databaseConnection():
-    connection = sqlite3.connect('GoldLifeDB.db', check_same_thread=False)
-    conn = connection.cursor()
-    return conn
-
-
-#Function to create the respective module table if not exists
-def create_Table_Users():
-    conn = databaseConnection()
-    conn.execute("CREATE TABLE IF NOT EXISTS users(Codigo_Usuario integer, Nome_Completo text, Email text, Data_Criacao text)")
-    return
-create_Table_Users()
 
 
 #Function to append data from API to the respective module table
@@ -35,6 +19,19 @@ def append_Table_Users(appendUser):
         message = "Usuario cadastrado com sucesso!"
     else:
         message = "Este usuario ja existe."
+
+    return message
+
+
+#Function to update the data of a user
+def update_Table_Users(updateList):
+    conn = databaseConnection()
+    updateList[0] = updateList[0].replace(".", "").replace("-", "").replace("/", "")
+    code = updateList[0]
+    conn.execute(f"UPDATE users SET Codigo_Usuario = ?, Nome_Completo = ?, Email = ? WHERE Codigo_Usuario = {code}", updateList)
+    #Saving the data
+    conn.connection.commit()
+    message = "Cliente atualizado com sucesso!"
 
     return message
 

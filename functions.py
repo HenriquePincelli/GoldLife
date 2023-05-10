@@ -8,11 +8,11 @@ import os
 
 
 #Function to make files with the data collected
-def makeFiles(option, df):
+def make_Files(option, df):
 
     #Declaring the list to interact with the save procedure
-    pathList = ["Users-Tables", "Clients-Tables"]
-    SheetList = ["Usuários", "Clientes"]
+    pathList = ["Tables-Users", "Tables-Clients", "Tables-Stock", "Tables-Payments"]
+    SheetList = ["Usuários", "Clientes", "Estoque", "Pagamentos"]
     
     #Saving files in the corresponding folder
     time = datetime.now()
@@ -24,10 +24,10 @@ def makeFiles(option, df):
 
 
 #Function to send email with the corresponding report
-def sendEmail(option, product, reportName, userEmail):
+def send_Email(option, product, reportName, userEmail):
 
     #Declaring the list to interact with the sending procedure
-    pathList = ["Users-Tables", "Clients-Tables"]
+    pathList = ["Tables-Users", "Tables-Clients", "Tables-Stock", "Tables-Payments"]
 
     #Starting smtp server
     server = smtplib.SMTP("smtp.gmail.com", "587")

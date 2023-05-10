@@ -1,0 +1,5 @@
+Codigo_Produto,Codigo_Venda,Nome_Produto,Quantidade,Preco_Medio_Unitario,Descricao
+666,9,Tabaco,0.8,6.0,"Quantidade em Kg, 20G/kit"
+12,24,Filtro,20.0,2.5,"Quantidade em unidade, 1/kit"
+459,45,Seda,20.0,1.5,"Quantidade em unidade, 1/kit"
+12,48,Filtro_Corinthians,20.0,2.5,"Quantidade em unidade, 1/kit"

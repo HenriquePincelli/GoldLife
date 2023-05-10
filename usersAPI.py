@@ -1,10 +1,12 @@
 from flask import Flask, jsonify, request, json
-from users import consult_Table_Users, append_Table_Users, pop_Table_Users
-from functions import makeFiles, sendEmail
+from users import consult_Table_Users, append_Table_Users, pop_Table_Users, update_Table_Users
+from functions import make_Files, send_Email
+from servers import create_Table_Users
 import pandas
 
 
 #Creating a server for the application
+create_Table_Users()
 app = Flask(__name__)
 
 
@@ -19,6 +21,8 @@ def usersAPI():
     if message == "Este usuario ja existe. Por gentileza, verifique os dados inseridos e tente novamente.":
         if "userAppend" in requestAPI.keys():
             result = append_Table_Users(requestAPI["userAppend"])
+        elif "userUpdate" in requestAPI.keys():
+            result = update_Table_Users(requestAPI["userUpdate"])
         elif "userPop" in requestAPI.keys():
             result = pop_Table_Users([requestAPI["userPop"]])
         elif "userConsult" in requestAPI.keys():
@@ -36,12 +40,12 @@ def usersAPI():
     try:
         df = pandas.DataFrame(result)
         df = df.set_axis(["Codigo_Usuario", "Nome", "Email", "Data_Criacao"], axis='columns')
-        reportName = makeFiles(0, df)
-        sendEmail(0, option, reportName, requestAPI["emailReport"])    
+        reportName = make_Files(0, df)
+        send_Email(0, option, reportName, requestAPI["emailReport"])    
         return jsonify(json.dumps(result))
     except ValueError:
         return jsonify(json.dumps(result))
         
 
 #Parameters of the local server
-app.run(port=5000, host="localhost", debug=True)
+app.run(port=1000, host="localhost", debug=True)
