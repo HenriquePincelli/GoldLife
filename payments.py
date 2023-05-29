@@ -49,13 +49,17 @@ def low_Stock(updateList):
     conn.execute(f"SELECT * FROM stock WHERE Codigo_Venda = {str(updateList[1][1])}")
     update2 = conn.fetchall()
     conn.execute(f"SELECT * FROM stock WHERE Codigo_Venda = {str(updateList[1][2])}")
-    update3 = conn.fetchall()
+    update3 = conn.fetchall()   
 
     #Check if the request matches the KIT
     if len(update1) == 0 and len(update2) == 0 and len(update3) == 0:
         message = "Verifique o codigo dos produtos vendidos e tente novamente."
         return message
-    ok = True if update1[0][0] != update2[0][0] and update1[0][0] != update3[0][0] and update2[0][0] != update3[0][0] else False
+    try:
+        ok = True if update1[0][0] != update2[0][0] and update1[0][0] != update3[0][0] and update2[0][0] != update3[0][0] else False
+    except IndexError:
+         message = "Verifique os codigos de vendas fornecidos e tente novamente."
+         return message
     if ok is True:
         #Making the calculation before updating stock and checking the query to build
         quantityUpdateTobacco = "-" + str(updateList[2] * 0.02)

@@ -1,0 +1,9 @@
+Codigo_Produto,Codigo_Venda,Nome_Produto,Quantidade,Preco_Medio_Unitario,Descricao
+666,9,Tabaco,1.0,6.0,"Quantidade em Kg, 20G/kit"
+12,24,Filtro,20.0,2.5,"Quantidade em unidade, 1/kit"
+12,25,FiltroCorinthians,20.0,1.5,Corinthians
+459,45,Seda,0.0,1.5,"Quantidade em unidade, 1/kit"
+666,99,Itaquera_Tabaco_1,2.0000000000000004,6.0,"Quantidade em Kg, 20G/kit"
+666,999,tabacoCorinthians,1.0,6.0,Corinthians
+459,4545,Seda_Corinthians,20.0,1.5,Seda do corinthians
+459,454545,Seda_Itaquera,20.0,1.5,Seda de itaquera

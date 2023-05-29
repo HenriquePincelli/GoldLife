@@ -1,0 +1,190 @@
+http://localhost:1000/users
+#Create a user
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "userAppend": ["47.354.773/0001-30", "Henrique Roberto de Murata Pincelli", "pincellihenrique9@gmail.com"],
+    "userAppend": [STRING, STRING, STRING]
+}
+#Read a specific user
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "emailReport": "pincellihenrique9@gmail.com",
+    "emailReport": STRING,
+    "userConsult": "47354773000130",
+    "userConsult": STRING
+}
+#Read all users
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "emailReport": "pincellihenrique9@gmail.com",
+    "emailReport": STRING
+}
+#Update a user
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "userUpdate": ["47.354.773/0001-30", "Messi", "pincellihenrique9@gmail.com"],
+    "userUpdate": [STRING, STRING, STRING]
+}
+#Delete a user
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "userPop": "47354773000130",
+    "userPop": STRING
+}
+
+
+http://localhost:2000/clients
+#update "Nº_Pedidos_Feitos" and "Nº_Pedidos_Concluídos" is a function at "servers" module
+#Create a client
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "client": ["440.621.128-41", "Lionel Messi", "lionelmessi10@gmail.com", "(11)94665-3230", "Avenida Copa do Mundo, 1 - Vila Nova Cachoeirinha, São Paulo - SP, CEP: 00459-459"],
+    "client": [STRING, STRING, STRING, STRING, STRING]
+}
+#Read a specific client
+{
+    "user": "44062112841",
+    "user": STRING,
+    "emailReport": "pincellihenrique9@gmail.com",
+    "emailReport": STRING,
+    "CPF/CNPJ": "445.621.128-41",
+    "CPF/CNPJ": STRING
+}
+#Read all clients
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "emailReport": "pincellihenrique9@gmail.com",
+    "emailReport": STRING
+}
+#Update a client
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "updateClient": ["44062112841", "Neymar Júnior", "pincellihenrique9@gmail.com", "(11)7714-2008", "Itaquerão"],
+    "updateClient": [STRING, STRING, STRING, STRING, STRING]
+}
+#Delete a client
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "CPF/CNPJ": "440.621.128-41",
+    "CPF/CNPJ": STRING
+}
+
+
+http://localhost:3000/stock
+#Create a product in stock
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "productAppend": [666, 9, "Tabaco", 1, 300, "Quantidade em Kg, 20G/kit"],
+    "productAppend": [INTEGER, INTEGER, STRING, FLOAT, FLOAT, STRING]
+}
+#Create a product in stock
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "productAppend": [459, 45, "Seda", 20, 30, "Quantidade em unidade, 1/kit"],
+    "productAppend": [INTEGER, INTEGER, STRING, FLOAT, FLOAT, STRING]
+}
+#Create a product in stock
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "productAppend": [12, 24, "Filtro", 20, 50, "Quantidade em unidade, 1/kit"],
+    "productAppend": [INTEGER, INTEGER, STRING, FLOAT, FLOAT, STRING]
+}
+#Read stock
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "emailReport": "pincellihenrique9@gmail.com",
+    "emailReport": STRING
+}
+#Update a product from stock
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "updateStock": [9, 0.20, 60],
+    "updateStock": [INTEGER, FLOAT, FLOAT]
+}
+#Update a product from stock
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "updateStock": [9, -0.20, 60],
+    "updateStock": [INTEGER, FLOAT, FLOAT]
+}
+#Update a product from stock
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "updateStock": [45, 20, 30],
+    "updateStock": [INTEGER, FLOAT, FLOAT]
+}
+#Update a product from stock
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "updateStock": [45, -20, 30],
+    "updateStock": [INTEGER, FLOAT, FLOAT]
+}
+#Update a product from stock
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "updateStock": [24, 20, 50],
+    "updateStock": [INTEGER, FLOAT, FLOAT]
+}
+#Update a product from stock
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "updateStock": [24, -20, 50],
+    "updateStock": [INTEGER, FLOAT, FLOAT]
+}
+#Delete a product from stock
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "productDelete": [1],
+    "productDelete": [INTEGER]
+}
+
+
+http://localhost:4000/payments
+#Create a payment
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "paymentAppend": ["440.621.128-41", [9, 24, 45], 10, 200, "PIX", "-"],
+    "paymentAppend": [STRING, [INTEGER, INTEGER, INTEGER], INTEGER, FLOAT, STRING, STRING]
+}
+#Read payments
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "emailReport": "pincellihenrique9@gmail.com",
+    "emailReport": STRING
+}
+#Update a payment
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "paymentUpdate": ["Numero_Pedido", "À Vista", "24/06/2000"],
+    "paymentUpdate": [STRING, STRING, STRING]
+}
+#Delete a payment
+{
+    "user": "440.621.128-41",
+    "user": STRING,
+    "paymentDelete": "Numero_Pedido",
+    "paymentDelete": STRING
+}
